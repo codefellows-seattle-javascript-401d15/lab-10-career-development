@@ -1,0 +1,16 @@
+{
+  "name": "lab-steven",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "singly",
+    "linked",
+    "list"
+  ],
+  "author": "CF Steven Johnson",
+  "license": "MIT"
+}
