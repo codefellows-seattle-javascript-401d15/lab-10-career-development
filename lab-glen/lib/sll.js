@@ -2,12 +2,14 @@
 
 const Node = require('./node.js');
 
+//O(n)
 const LinkedList = module.exports =  function () {
   this.head = null;
   this.tail = null;
   this.listLength = 0;
 };
 
+//O(n)
 LinkedList.prototype.size = function () {
   let current = this.head;
   let count = 0;
@@ -19,10 +21,12 @@ LinkedList.prototype.size = function () {
   return count;
 };
 
+//O(1)
 LinkedList.prototype.isEmpty = function () {
   return this.head === null;
 };
 
+//O(1)
 LinkedList.prototype.prepend = function (value) {
   let node = new Node(value);
   if(!this.head) {
@@ -36,6 +40,7 @@ LinkedList.prototype.prepend = function (value) {
   return this;
 };
 
+//O(1)
 LinkedList.prototype.append = function (value) {
   let node = new Node(value);
 
@@ -53,6 +58,7 @@ LinkedList.prototype.append = function (value) {
   this.listLength++;
 };
 
+//O(n)
 LinkedList.prototype.findNthNode = function(value) {
   let current = this.head;
   let count = 0;
@@ -69,6 +75,7 @@ LinkedList.prototype.findNthNode = function(value) {
   return current;
 };
 
+//O(n)
 LinkedList.prototype.findMiddleNode = function() {
   let pointerTwo = this.head;
   let pointerOne = this.head;
@@ -80,6 +87,7 @@ LinkedList.prototype.findMiddleNode = function() {
   return pointerOne;
 };
 
+//O(1)
 LinkedList.prototype.remove = function(val) {
   if(this.head.val === val) {
     this.head = this.head.next;
@@ -113,6 +121,7 @@ LinkedList.prototype.reverse = function () {
   this.head = previous;
 };
 
+//O(1)
 LinkedList.prototype.contains = function (val) {
   let current = this.head;
   while(current !== null); {
@@ -124,6 +133,7 @@ LinkedList.prototype.contains = function (val) {
   return false;
 };
 
+//O(1)
 LinkedList.prototype.print = function () {
   let output = '[';
   let current = this.head;
