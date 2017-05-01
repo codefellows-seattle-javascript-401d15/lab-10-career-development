@@ -39,8 +39,8 @@ SLL.prototype.append = function(value) {
   }
 };
 
-SLL.prototype.reverse = function(value) {
-  const node = new Node(value);
+SLL.prototype.reverse = function() {
+  const node = new Node();
   let head = this.head;
   let pointer = null;
   const originLast = this.lastNode;
@@ -61,7 +61,6 @@ SLL.prototype.remove = function(value) {
   let beforeNodeToDelete = null;
   let nodeToDelete = null;
   let deletedNode = null;
-
 
   if(value < 0 || value > length) {
     console.error();
