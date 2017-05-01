@@ -141,4 +141,27 @@ describe('testing the single linked-list methods', function() {
       });
     });
   });
+  
+  describe.only('testing removal of a specific node', function() {
+    let sllSpecificDelete = sll.append(3).append(6).append(1).append(9);
+    
+    it('should contain the value before the method was applied', done => {
+      expect(sllSpecificDelete).to.have.valueOf(3);
+      done();
+    });
+    
+    sllSpecificDelete.removeSpecificNode(2);
+    
+    it('should not include the value after the method was applied', done => {
+      expect(sllSpecificDelete).to.not.have.valueOf(3);
+      done();
+    });
+    
+    sllSpecificDelete.removeSpecificNode(3);
+    
+    it('should remove another node when called again', done => {
+      expect(sllSpecificDelete).to.not.have.valueOf(2);
+      done();
+    });
+  });
 });
