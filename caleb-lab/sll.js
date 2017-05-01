@@ -45,31 +45,54 @@ SLL.prototype.append = function(value) {
   }
 };
 
+// SLL.prototype.reverse = function(){
+//   let originalHead = this.head;
+//   let originalLast;
+//   let currentNode = this.head;
+//   let previous = null;
+//
+//
+//   while(currentNode.next != null){
+//     currentNode = currentNode.next;
+//
+//     if(currentNode.next === null){
+//       originalLast = currentNode;
+//       console.log(originalLast);
+//     }
+//
+//     if(currentNode.next === originalLast){
+//       this.append(currentNode);
+//     }
+//
+//     // if(originalHead.next === originalLast){
+//     //   this.append(originalHead);
+//     //   originalLast = this.head;
+//     //   return;
+//     // }
+//   }
+// };
+
+// SLL.prototype.reverse = function(){
+//   let node = linkedList;
+//
+//
+//
+// };
+
 SLL.prototype.reverse = function(){
-  let originalHead = this.head;
-  let originalLast;
-  let currentNode = this.head;
-  let previous = null;
+  let p1 = null;
+  let p2 = this.head;
+  let p3 = null;
 
-
-  while(currentNode.next != null){
-    currentNode = currentNode.next;
-
-    if(currentNode.next === null){
-      originalLast = currentNode;
-      console.log(originalLast);
-    }
-
-    if(currentNode.next === originalLast){
-      this.append(currentNode);
-    }
-
-    // if(originalHead.next === originalLast){
-    //   this.append(originalHead);
-    //   originalLast = this.head;
-    //   return;
-    // }
+  while(p2){
+    p3 = p2.next;
+    p2.next = p1;
+    p1 = p2;
+    p2 = p3;
   }
+
+  this.head = p1;
+  return this;
 };
 
 
