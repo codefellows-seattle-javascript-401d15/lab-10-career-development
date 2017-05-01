@@ -74,21 +74,3 @@ SLL.prototype.reverse = function() {
   this.head = previous;
   return this.head;
 };
-// 
-// // O(log n)
-// SSL.prototype.fastReverse = function() {
-//   let leftmostNode = this.head;
-//   let rightmostNode = this.head;
-//   
-//   while(rightmostNode.next !== null)
-//   {
-//     rightmostNode = rightmostNode.next;
-//   }
-//   
-//   
-// }
-
-// SSL.prototype.fastReverse(leftNode, rightNode) = function()
-// {
-//   
-// }
