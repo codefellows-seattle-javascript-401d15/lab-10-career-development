@@ -2,9 +2,11 @@
 
 const Node = require('./node.js');
 
-function LinkedList() {
+const LinkedList = module.exports =  function () {
   this.head = null;
-}
+  this.tail = null;
+  this.listLength = 0;
+};
 
 LinkedList.prototype.size = function () {
   let current = this.head;
@@ -30,6 +32,7 @@ LinkedList.prototype.prepend = function (value) {
 
   node.next = this.head;
   this.head = node;
+  this.listLength++;
   return this;
 };
 
@@ -46,8 +49,35 @@ LinkedList.prototype.append = function (value) {
   while(current.next !== null) {
     current = current.next;
   }
-
   current.next = node;
+  this.listLength++;
+};
+
+LinkedList.prototype.findNthNode = function(value) {
+  let current = this.head;
+  let count = 0;
+
+  if(value > this.length) {
+    return 'Does not exist';
+  }
+
+  while(count < value) {
+    current = current.next;
+    count++;
+  }
+
+  return current;
+};
+
+LinkedList.prototype.findMiddleNode = function() {
+  let pointerTwo = this.head;
+  let pointerOne = this.head;
+
+  while(pointerTwo.next !== null && pointerTwo.next.next !== null) {
+    pointerTwo = pointerTwo.next.next;
+    pointerOne = pointerOne.next;
+  }
+  return pointerOne;
 };
 
 LinkedList.prototype.remove = function(val) {
@@ -62,16 +92,17 @@ LinkedList.prototype.remove = function(val) {
   while(current.val !== val) {
     previous = current;
     current = current.next;
-  }
 
+  }
   previous.next = current.next;
+  this.tail = current.next;
 };
 
 // O(n) where n is the number of nodes in the linked list
 LinkedList.prototype.reverse = function () {
-  var previous = null;
-  var current = this.head;
-  var next;
+  let previous = null;
+  let current = this.head;
+  let next;
 
   while(current) {
     next = current.next;
@@ -83,7 +114,7 @@ LinkedList.prototype.reverse = function () {
 };
 
 LinkedList.prototype.contains = function (val) {
-  var current = this.head;
+  let current = this.head;
   while(current !== null); {
     if(current.val === val) {
       return true;
@@ -108,5 +139,3 @@ LinkedList.prototype.print = function () {
   output += ']';
   console.log(output);
 };
-
-exports.module.LinkedList = LinkedList;
