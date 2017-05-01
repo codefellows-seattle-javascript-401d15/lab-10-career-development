@@ -52,19 +52,12 @@ SLL.prototype.remove = function(node) {
   return node;
 };
 
-//O(log(n))
-SLL.prototype.reverse = function(sll) {
-  check(sll.head);
+//O(n)
+SLL.prototype.reverse = function() {
   let newSLL = new SLL();
-
-  function check(node) {
-    if(!node.next) {
-      newSLL.append(node.value);
-      node = SLL.remove(node);
-      check(sll.head);
-    } else {
-      check(node.next);
-    }
+  while (this.head) {
+    newSLL.prepend(this.head.val);
+    this.head = this.remove(this.head);
   }
   return newSLL;
 };

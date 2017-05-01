@@ -2,6 +2,7 @@
 
 let expect = require('chai').expect;
 let SLL = require('../lib/sll.js');
+// let remove = require('../lib/sll.js').remove;
 
 describe('SLL', function() {
   describe('#remove', function() {
@@ -18,9 +19,7 @@ describe('SLL', function() {
       sll.prepend(57);
       sll.append(78);
       sll.append(4);
-      // console.log(sll);
       sll.head.next = sll.remove(sll.head.next);
-      console.log(sll);
       expect(sll.head.next).to.exist;
     });
     it('should also work on the head', () => {
@@ -34,6 +33,24 @@ describe('SLL', function() {
   });
 
   describe('#reverse', function() {
-    
+    it('should have the same amount of arguments', () => {
+      let sll = new SLL;
+      sll.prepend(57);
+      sll.append(78);
+      sll.append(4);
+      let mod = sll.reverse();
+      console.log(mod.head.val);
+      expect(mod.head.next.next.val).to.equal(57);
+    });
+    it('should return the first value as the last of the old list', () => {
+      let sll = new SLL;
+      sll.prepend(57);
+      sll.append(78);
+      sll.append(4);
+      sll.append(90);
+      sll.append(404);
+      let mod = sll.reverse();
+      expect(mod.head.val).to.equal(404);
+    });
   });
 });
