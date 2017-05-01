@@ -40,16 +40,16 @@ SLL.prototype.append = function(val){
 
 //O(n)
 SLL.prototype.removeNode = function(node){
-  let nextNode = node.next;
-  let prevNode = null;
+  // let nextNode = node.next;
+  let prevNode = this.head;
 
   if (this.head === node) {
-    this.head = null;
+    this.head = this.head.next;
     return this;
   }
 
   _findPrev(this.head);
-  prevNode.next = nextNode;
+  prevNode.next = node.next;
   return this;
 
   function _findPrev(pNode){  //check each node from head to see if pNode.next === node
@@ -60,5 +60,16 @@ SLL.prototype.removeNode = function(node){
 };
 
 SLL.prototype.reverse = function(){
+  let currNode = this.head;
+  let prevNode = null;
+  let nextNode = null;
 
-}
+  while(currNode !== null){
+    nextNode = currNode.next;
+    currNode.next = prevNode;
+    prevNode = currNode;
+    currNode = nextNode;
+  }
+  this.head = prevNode;
+  return this;
+};
