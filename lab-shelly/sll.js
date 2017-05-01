@@ -48,7 +48,7 @@ SLL.prototype.append = function(value) {
 //O(n)
 
 SLL.prototype.remove = function(value) {
-  // let node = new Node(value);
+
   if(this.head == null) return;
 //if head is what needs to be deleted, then reassign the head position. make head be equal to the node with value head.next
   if(this.head == value) {
@@ -65,6 +65,20 @@ SLL.prototype.remove = function(value) {
     }
     current = current.next; //otherwise, continue to iterate until if is met
   }
-  //iterate thru the link list and delete one before the element we want to delete. set current nodes next pointer to equal the to-be-deleted values next pointer - you're skipping over the deleted one.
+  //iterate thru the link list and delete one before the element we want to delete. set current nodes next pointer to equal the to-be-deleted values next pointer - so...you're skipping over the deleted one and popping it out.
+};
 
+// O(n)
+SLL.prototype.reverse = function() {
+  let current = this.head;
+  let next = null;
+  let previous = null;
+
+  while(current != null) {
+    next = current.next;
+    current.next = previous;
+    previous = current;
+    current = next;
+  }
+  this.head = previous;
 };
