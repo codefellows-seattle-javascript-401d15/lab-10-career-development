@@ -43,11 +43,10 @@ SLL.prototype.remove = function(){
 };
 
 SLL.prototype.reverse = function() {
-  if(!this.head || !this.head.next) return; {
-    let placeOne = null;
-    let placeTwo = this.head;
-    let placeThree;
-  }
+  if(!this.head || !this.head.next) return;
+  let placeOne = null;
+  let placeTwo = this.head;
+  let placeThree;
   while (placeTwo) {
     placeThree = placeTwo.next;
     placeTwo.next = placeOne;
