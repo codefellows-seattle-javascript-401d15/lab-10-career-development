@@ -86,16 +86,27 @@ describe('#SLL method tests', function() {
         done();
       });
 
-      it('should move val: 3 left one position.  new order is 1, 3, 2', function() {
-        console.log('TEST THIS');
-      });
+      it('should move val: 3 left one position.  new order is 3, 2, 1', function() {
+        let revSll = { head: { val: 1, next: { val: 2, next: { val: 3, next: null   } } } };
+        revSll.reverse();
+        it('should now have an order of 3, 2, 1', done => {
+          expect(revSll.head.next.next).to.be.an('object')
+          .that.has.property('next')
+          .that.equals(null);
+          done();
+        });
 
-      it('should move val: 3 left one more position.  new order is 3, 1, 2', function() {
-        console.log('TEST THIS');
-      });
+        it('should move val: 3 to the first position.', done => {
+          console.log(revSll.head.val);
+          expect(revSll.head).to.be.an('object')
+          .that.has.property('val')
+          .that.equals(3);
+          done();
+        });
 
-      it('should move val: 2 left one position.  new order is 3, 2, 1', function() {
-        console.log('TEST THIS done when it passes');
+        it('should move val: 2 left one position.  new order is 3, 2, 1', function() {
+          console.log('TEST THIS done when it passes');
+        });
       });
     });
   });
