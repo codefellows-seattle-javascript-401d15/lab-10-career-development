@@ -76,3 +76,18 @@ Sll.prototype.log = function() {
   output += ']';
   console.log(output);
 };
+
+Sll.prototype.reverse = function() {
+  let next = null;
+  let current = this.head;
+  let previous = null;
+
+  while(current != null) {
+    next = current.next;
+    current.next = previous;
+    previous = current;
+    current = next;
+  }
+
+  this.head = previous;
+};
