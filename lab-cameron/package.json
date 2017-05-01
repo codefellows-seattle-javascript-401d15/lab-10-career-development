@@ -1,0 +1,24 @@
+{
+  "name": "singly-linked-list-reversal",
+  "version": "0.0.1",
+  "description": "second DSA lab, reversing a singly linked list",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha",
+    "watch": "nodemon index.js"
+  },
+  "keywords": [
+    "recursive",
+    "node",
+    "SLL"
+  ],
+  "author": "Cameron Bacon",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.3.0"
+  }
+}
