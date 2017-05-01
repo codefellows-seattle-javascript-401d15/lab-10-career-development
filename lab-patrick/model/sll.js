@@ -22,15 +22,6 @@ SLL.prototype.append = function(value){
 };
 
 
-let sll = new SLL();
-
-sll.append(1);
-sll.append(2);
-sll.append(3);
-sll.append(4);
-sll.append(5);
-
-console.log(sll);
 
 // O(n)
 SLL.prototype.remove = function(val){
@@ -54,13 +45,47 @@ SLL.prototype.remove = function(val){
   }
 };
 
-// sll.remove(3);
-// console.log('removed 3', sll);
-// sll.remove(2);
-// console.log('removed 2 which was head', sll);
+//O(n)
+//Written with help from Glen
+SLL.prototype.reverse = function(){
+  let current = this.head;
+  let previousNode = null;
+  let next;
 
-
-SLL.prototype.reverse = function(LinkedList){
-
-
+  while(current) {
+    next = current.next;
+    current.next = previousNode;
+    previousNode = current;
+    current = next;
+  }
+  this.head = previousNode;
 };
+
+//Provided by Glen
+SLL.prototype.print = function () {
+  let output = '[';
+  let current = this.head;
+
+  while (current !== null) {
+    output += current.val;
+    if(current.next !== null) {
+      output += ',';
+    }
+    current = current.next;
+  }
+  output += ']';
+  console.log(output);
+};
+
+let sll = new SLL();
+
+sll.append(1);
+sll.append(2);
+sll.append(3);
+sll.append(4);
+sll.append(5);
+sll.print();
+sll.remove(4);
+
+sll.reverse();
+sll.print();
