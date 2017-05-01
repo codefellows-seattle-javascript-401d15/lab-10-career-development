@@ -53,39 +53,36 @@ SLL.prototype.reverse = function() {
   return node;
 };
 
-// Resource used for reference: https://code.tutsplus.com/articles/data-structures-with-javascript-singly-linked-list-and-doubly-linked-list--cms-23392
+// Resource used for correction/ reference: https://code.tutsplus.com/articles/data-structures-with-javascript-singly-linked-list-and-doubly-linked-list--cms-23392
 SLL.prototype.remove = function(value) {
   let current = this.head;
-  let length = this._length;
+  let length = this._length; //establishes length of DS
   let count = 0;
-  let beforeNodeToDelete = null;
-  let nodeToDelete = null;
-  let deletedNode = null;
 
-  if(value < 0 || value > length) {
-    console.error();
-  }
+  let beforeDeletedNode = null;
+  let nodeForDeleting = null;
+  let deleteNode = null;
 
-  if (value === 1) {
+  if (value === 1) { //if value is head
     this.head = current.next;
-    deletedNode = current;
+    deleteNode = current;
     current = null;
     this._length--;
 
-    return deletedNode;
+    return deleteNode;
   }
 
   while (count < value) {
-    beforeNodeToDelete = current;
-    nodeToDelete = current.next;
+    beforeDeletedNode = current;
+    nodeForDeleting = current.next;
     count ++;
   }
 
-  beforeNodeToDelete.next = nodeToDelete.next;
-  deletedNode = nodeToDelete;
-  nodeToDelete = null;
+  beforeDeletedNode.next = nodeForDeleting.next;
+  deleteNode = nodeForDeleting;
+  nodeForDeleting = null;
   this._length--;
 
-  return deletedNode;
+  return deleteNode;
 
 };
