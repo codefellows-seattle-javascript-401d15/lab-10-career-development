@@ -80,3 +80,42 @@ SingleLink.prototype.delete = function(position) {
 
   return nodeDeleted;
 };
+
+SingleLink.prototype.reverse = function() {
+  let current = this.head;
+  let previousNode = null;
+  let next;
+
+  while(current) {
+    next = current.next;
+    current.next = previousNode;
+    previousNode = current;
+    current = next;
+  }
+  this.head = previousNode;
+};
+
+SingleLink.prototype.print = function () {
+  let output = '[';
+  let current = this.head;
+
+  while (current !== null) {
+    output += current.data;
+    if(current.next !== null) {
+      output += ',';
+    }
+    current = current.next;
+  }
+
+  output += ']';
+  console.log(output);
+};
+
+let newList = new SingleLink();
+newList.add(1);
+newList.add(2);
+newList.add(3);
+newList.add(4);
+newList.reverse();
+newList.print();
+console.log(newList);
