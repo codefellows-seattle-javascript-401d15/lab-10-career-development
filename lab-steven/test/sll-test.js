@@ -1,6 +1,5 @@
 'use strict';
 
-const Node = require('../lib/nodeCreator.js');
 const SLL = require('../index.js');
 const expect = require('chai').expect;
 
