@@ -59,6 +59,18 @@ SLL.prototype.remove = function(value) {
   }
 };
 
+SLL.prototype.removeSpecificNode = function(n) {
+  let nodeBefore = this.head;
+  let targetNode;
+  
+  for(let i = 0; i < n; i++) {
+    targetNode = nodeBefore.next;
+    console.log(targetNode);
+    return targetNode;
+  }
+  
+};
+
 // O(n)
 SLL.prototype.reverse = function() {
   let current = this.head;
