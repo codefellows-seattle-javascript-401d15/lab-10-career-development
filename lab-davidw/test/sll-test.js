@@ -40,7 +40,7 @@ describe('#SLL method tests', function() {
 
     describe('#prepend method', function() {
       let sll = new SLL();
-      it('should not contain the value before prepending', done => {
+      it('should not contain a value before prepending', done => {
         expect(sll).to.have.property('head')
         .that.equals(null);
         done();
@@ -56,7 +56,6 @@ describe('#SLL method tests', function() {
 
       it('should add another node', done => {
         sll.prepend(2);
-        console.log('remind me sll', sll);
         expect(sll.head.next).to.be.an('object')
         .that.has.property('val')
         .that.equals(2);
@@ -65,7 +64,9 @@ describe('#SLL method tests', function() {
     });
 
     describe('#reverse method', function() {
-      let revSll = { head: { val: 1, next: { val: 2, next: { val: 3, next: null   } } } };
+      let revSll = new SLL().append(1);
+      revSll.append(2);
+      revSll.append(3);
 
       it('should start with an order of 1, 2, 3', done => {
         expect(revSll.head.next.next).to.be.an('object')
@@ -86,26 +87,57 @@ describe('#SLL method tests', function() {
         done();
       });
 
-      it('should move val: 3 left one position.  new order is 3, 2, 1', function() {
-        let revSll = { head: { val: 1, next: { val: 2, next: { val: 3, next: null   } } } };
+      it('should make new order become 3, 2, 1', function() {
         revSll.reverse();
         it('should now have an order of 3, 2, 1', done => {
           expect(revSll.head.next.next).to.be.an('object')
           .that.has.property('next')
           .that.equals(null);
-          done();
-        });
 
-        it('should move val: 3 to the first position.', done => {
-          console.log(revSll.head.val);
           expect(revSll.head).to.be.an('object')
           .that.has.property('val')
           .that.equals(3);
+
+          expect(revSll.head.next).to.be.an('object')
+          .that.has.property('val')
+          .that.equals(2);
+
+          expect(revSll.head.next.next).to.be.an('object')
+          .that.has.property('val')
+          .that.equals(1);
           done();
         });
-
-        it('should move val: 2 left one position.  new order is 3, 2, 1', function() {
-          console.log('TEST THIS done when it passes');
+      });
+      describe('#remove  method', function() {
+        it('should start with values 1 and 2', done => {
+          let remSll = new SLL();
+          remSll.append(1);
+          remSll.append(2);
+          expect(remSll.head).to.be.an('object')
+          .that.has.property('val')
+          .that.equals(1);
+          done();
+        });
+        it('should have only a value of 2 after removing 1', done => {
+          let remSll = new SLL();
+          remSll.append(1);
+          remSll.append(2);
+          remSll.remove(1);
+          expect(remSll.head).to.be.an('object')
+          .that.has.property('val')
+          .that.equals(2);
+          done();
+        });
+        it('should have only a value of head and next = null after removing 1 and 2', done => {
+          let remSll = new SLL();
+          remSll.append(1);
+          remSll.append(2);
+          remSll.remove(1);
+          remSll.remove(2);
+          expect(remSll).to.be.an('object')
+          .that.has.property('head')
+          .that.equals(null);
+          done();
         });
       });
     });

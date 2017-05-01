@@ -18,5 +18,7 @@
     - append
     - prepend
     - reverse
+    - remove
 
 ### Attributions
+I got stuck and took a look at Glen Pham's repository to compare my reverse and remove methods to another student's.  His was very similar, but I did note some differences which could have been bugs, and changed my code to be more like his.

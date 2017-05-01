@@ -45,15 +45,32 @@ SLL.prototype.append = function(val) {
 SLL.prototype.reverse = function() {
   let current = this.head;
   let previous = null;
-  let nextNode;
+  let next;
 
-  while(current !== null) {
-    nextNode = current.next;
+  while(current) {
+    next = current.next;
     current.next = previous;
     previous = current;
-    current = nextNode;
+    current = next;
   }
 
   this.head = previous;
-  return this.head;
+};
+
+
+SLL.prototype.remove = function(val) {
+  if(this.head.val === val) {
+    this.head = this.head.next;
+    return;
+  }
+
+  let previous = null;
+  let current = this.head;
+
+  while(current.val !== val) {
+    previous = current;
+    current = current.next;
+  }
+
+  previous.next = current.next;
 };
