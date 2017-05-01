@@ -5,6 +5,7 @@ const Node = require('./lib/nodeCreator.js');
 const SLL = module.exports = function(){
   this.head = null;
 };
+
 //O(n)
 SLL.prototype.prepend = function(val){
   let node = new Node(val);
@@ -17,6 +18,7 @@ SLL.prototype.prepend = function(val){
   this.head = node;
   return this;
 };
+
 //O(n)
 SLL.prototype.append = function(val){
   let node = new Node(val);
@@ -40,7 +42,6 @@ SLL.prototype.append = function(val){
 
 //O(n)
 SLL.prototype.removeNode = function(node){
-  // let nextNode = node.next;
   let prevNode = this.head;
 
   if (this.head === node) {
@@ -59,6 +60,7 @@ SLL.prototype.removeNode = function(node){
   }
 };
 
+//O(n)
 SLL.prototype.reverse = function(){
   let currNode = this.head;
   let prevNode = null;
