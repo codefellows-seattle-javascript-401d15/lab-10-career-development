@@ -52,7 +52,7 @@ SLL.prototype.searchNodeAt = function(position) {
   let currentNode = this.head,
   length = this._length,
   count = 1,
-  message = {failure: 'Failure: Non existant node at that position in this list'};
+  message = {failure: 'Failure: Non existent node at that position in this list'};
 
   if(length ==== 0 || position < 1 || position > length) {
     throw new Error(message.failure);
@@ -100,5 +100,11 @@ SLL.prototype.remove = function(position) {
 };
 
 SLL.prototype.reverse = function(value) {
+  let newSLL = new SLL();
 
+  while(this.head) {
+    newSLL.prepend(this.head.value);
+    this.head = this.remove(this.head);
+  }
+  return newSLL;
 };
