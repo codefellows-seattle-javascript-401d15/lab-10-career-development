@@ -1,0 +1,30 @@
+{
+  "name": "lab-james",
+  "version": "1.0.0",
+  "description": "Code 401 DSA lab 2",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ithalis/lab-10-career-development.git"
+  },
+  "keywords": [
+    "mocha",
+    "singly-linked-lists"
+  ],
+  "author": "James",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ithalis/lab-10-career-development/issues"
+  },
+  "homepage": "https://github.com/Ithalis/lab-10-career-development#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.3.0"
+  }
+}
