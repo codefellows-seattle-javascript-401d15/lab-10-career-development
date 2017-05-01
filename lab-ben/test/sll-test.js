@@ -39,7 +39,6 @@ describe('SLL', function() {
       sll.append(78);
       sll.append(4);
       let mod = sll.reverse();
-      console.log(mod.head.val);
       expect(mod.head.next.next.val).to.equal(57);
     });
     it('should return the first value as the last of the old list', () => {
