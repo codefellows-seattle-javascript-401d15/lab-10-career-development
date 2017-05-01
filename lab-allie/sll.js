@@ -41,6 +41,24 @@ SLL.prototype.append = function(value) {
   }
 };
 
+//O(1)
+SLL.prototype.remove = function(value) {
+  let currentNode = this.head;
+  
+  if(this.head.val === value) this.head = this.head.next;
+  
+  let nextNode = currentNode.next;
+
+  if (currentNode.next.val == value) {
+    currentNode.next = nextNode.next;
+    return;
+  } else {    
+    currentNode = nextNode;
+    nextNode = nextNode.next;
+    return;
+  }
+};
+
 // O(n)
 SLL.prototype.reverse = function() {
   let current = this.head;
