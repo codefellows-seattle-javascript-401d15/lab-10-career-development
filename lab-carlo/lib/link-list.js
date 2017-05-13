@@ -9,7 +9,7 @@ const SingleLink = module.exports = function() {
   this._length = 0;
   this.head = null;
 };
-
+//O(n)
 SingleLink.prototype.append = function(value) {
   let node = new Node(value),
     currentNode = this.head;
@@ -26,7 +26,7 @@ SingleLink.prototype.append = function(value) {
   this._length++;
   return node;
 };
-
+//O(n)
 SingleLink.prototype.nodeSearchAt = function(position) {
   let currentNode = this.head,
     length = this._length,
@@ -43,7 +43,7 @@ SingleLink.prototype.nodeSearchAt = function(position) {
   }
   return currentNode;
 };
-
+//O(n)
 SingleLink.prototype.delete = function(position) {
   let currentNode = this.head,
     length = this._length,
@@ -79,7 +79,7 @@ SingleLink.prototype.delete = function(position) {
 
   return nodeDeleted;
 };
-
+//O(n)
 SingleLink.prototype.reverse = function() {
   let current = this.head;
   let previousNode = null;
