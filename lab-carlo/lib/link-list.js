@@ -1,22 +1,21 @@
 'use strict';
 
-function Node(data) {
-  this.data = data;
+const Node = module.exports = function(val) {
+  this.val = val;
   this.next = null;
-}
+};
 
-function SingleLink() {
+const SingleLink = module.exports = function() {
   this._length = 0;
   this.head = null;
-}
+};
 
-SingleLink.prototype.add = function(value) {
+SingleLink.prototype.append = function(value) {
   let node = new Node(value),
     currentNode = this.head;
 
   if(!currentNode) {
     this.head = node;
-    this._length++;
     return node;
   }
 
@@ -100,7 +99,7 @@ SingleLink.prototype.print = function () {
   let current = this.head;
 
   while (current !== null) {
-    output += current.data;
+    output += current.val;
     if(current.next !== null) {
       output += ',';
     }
@@ -109,13 +108,14 @@ SingleLink.prototype.print = function () {
 
   output += ']';
   console.log(output);
+  return output;
 };
 
 let newList = new SingleLink();
-newList.add(1);
-newList.add(2);
-newList.add(3);
-newList.add(4);
+newList.append(1);
+newList.append(2);
+newList.append(3);
+newList.append(4);
 newList.reverse();
 newList.print();
 console.log(newList);
