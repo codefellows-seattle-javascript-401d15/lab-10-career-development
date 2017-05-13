@@ -21,8 +21,6 @@ SLL.prototype.append = function(value){
   }
 };
 
-
-
 // O(n)
 SLL.prototype.remove = function(val){
   let current = this.head;
