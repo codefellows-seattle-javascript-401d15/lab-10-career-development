@@ -1,0 +1,21 @@
+{
+  "name": "lab-steven",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint ../"
+  },
+  "keywords": [
+    "singly",
+    "linked",
+    "list"
+  ],
+  "author": "CF Steven Johnson",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.3.0"
+  }
+}
