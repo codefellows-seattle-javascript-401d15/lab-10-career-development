@@ -1,0 +1,27 @@
+{
+  "name": "lab-10-lindsay",
+  "version": "1.0.0",
+  "description": "lab-10-linked-list-lindsay",
+  "main": "sll.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lindsgil/lab-10-career-development.git"
+  },
+  "keywords": [
+    "lab-10",
+    "linked-list",
+    "lindsay"
+  ],
+  "author": "lindsay",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lindsgil/lab-10-career-development/issues"
+  },
+  "homepage": "https://github.com/lindsgil/lab-10-career-development#readme",
+  "devDependencies": {
+    "mocha": "^3.3.0"
+  }
+}
