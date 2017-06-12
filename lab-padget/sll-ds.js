@@ -2,6 +2,23 @@
 
 // TODO: complete the Linked List data structure by adding a remove(node) method.
 
+// let node;
+let head;
+
+function append() {
+  if (head === null) {
+    // make a new head.
+  }
+}
+append();
+
+function prepend() {
+
+}
+prepend();
+
+
+
 // TODO: implement reverse() as a method on the Linked List prototype; from your whiteboard exercise.
 
 // TODO: in comments above or within each function, note the Big-O runtime.
@@ -10,9 +27,23 @@
 
 // NOTE: implement findMiddleNode() as a method on the LL prototype.
 
-
-
 /*
+// ### GROUP CODE 2 ###
+SLL.prototype.reverse = function() {
+  let newSLL = new SLL();
+  while (this.head) {
+    newSLL.prepend(this.head.val);
+    this.head = this.remove(this.head);
+  }
+  return newSLL;
+};
+
+SLL.prototype.remove = function(node) {
+  node = node.next;
+  return node;
+};
+
+
 // ### GROUP CODE ###
 'use strict';
 
