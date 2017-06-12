@@ -1,5 +1,7 @@
 'use strict';
 
+// NOTE: see read me for big O notation.
+
 const Node = require('./list-node');
 
 // For prototype methods that will export on the constructor.
@@ -7,7 +9,6 @@ const SLL = module.exports = function() {
   this.head = null;
 };
 
-// NOTE: O(n)
 // Prepend() adds a new node at the HEAD.
 // Create new node, check to see if node is empty.
 SLL.prototype.prepend = function(value) {

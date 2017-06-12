@@ -80,7 +80,7 @@ In [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) (Terminal) enter the 
 * [Big O Notation](https://simple.wikipedia.org/wiki/Big_O_notation)
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md]() file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/mmpadget/lab-10-career-development/blob/lab-10/lab-padget/LICENSE) file for details.
 
 ## Acknowledgments
 * Code Fellows
