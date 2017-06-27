@@ -6,6 +6,7 @@ const SLL = module.exports = function() {
   this.head = null
 }
 
+// O(1) - always starts at the head to prepend.
 SLL.prototype.prepend = function(value) {
   let node = new Node(value)
   if(!this.head) {
@@ -18,6 +19,7 @@ SLL.prototype.prepend = function(value) {
   return this
 }
 
+// O(n)
 SLL.prototype.append = function(value) {
   let node = new Node(value)
   let lastNode = null
@@ -38,6 +40,7 @@ SLL.prototype.append = function(value) {
   }
 }
 
+// O(n)
 SLL.prototype.findTail = function(){
   let current = this.head
   let tail
@@ -50,6 +53,7 @@ SLL.prototype.findTail = function(){
   return tail
 }
 
+// O(n)
 SLL.prototype.remove = function(value){
   let current = this.head
 
@@ -61,6 +65,7 @@ SLL.prototype.remove = function(value){
   return
 }
 
+// O(n)
 SLL.prototype.reverse = function(){
   let current = this.head
   let previous = null
