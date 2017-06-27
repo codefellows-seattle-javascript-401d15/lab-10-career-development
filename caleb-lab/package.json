@@ -1,0 +1,19 @@
+{
+  "name": "caleb-lab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "list-node.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2"
+  }
+}
