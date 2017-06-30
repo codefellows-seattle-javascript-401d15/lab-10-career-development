@@ -1,6 +1,6 @@
 'use strict';
 
-const Node = require('./reverse');
+const Node = require('./sll-node');
 
 const SLL = module.exports = function() {
   this.head = null;
