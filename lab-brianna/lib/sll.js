@@ -6,6 +6,7 @@ const SLL = module.exports = function () {
   this.head = null;
 };
 
+// O(n)
 SLL.prototype.prepend = function(value) {
   let node = new Node(value);
   if(!this.head) {
@@ -17,6 +18,7 @@ SLL.prototype.prepend = function(value) {
   return this;
 };
 
+// 0(n)
 SLL.prototype.append = function(value) {
   let node = new Node(value);
   let lastNode = null;
@@ -38,9 +40,23 @@ SLL.prototype.append = function(value) {
   }
 };
 
-SLL.prototype.remove = function(){
+//0(1)
+SLL.prototype.remove = function(value) {
+   let current = this.head;
 
-};
+   if(this.head.val === value) this.head = this.head.next;
+
+   let nextNode = current.next;
+
+   if (current.next.val == value) {
+     current.next = nextNode.next;
+     return;
+   } else {
+     current = nextNode;
+     nextNode = nextNode.next;
+     return;
+   }
+ };
 
 SLL.prototype.reverse = function() {
   if(!this.head || !this.head.next) return;
